@@ -1,4 +1,6 @@
-# Consent Checker v0.7
+# Consent Checker v0.8
+
+
 while True:
     print("Welcome to Consent Checkr v0.7!")
     print("*******************************")
@@ -19,23 +21,23 @@ while True:
 
 
     elif (your_age > other_age):
-        age_gap = your_age - other_age
+        min_age = (your_age/2)+7
 
-        if (age_gap <= 7):
+        if (other_age >= min_age):
             print("You're good to go!\n*******************************")
 
-        if (age_gap > 7):
+        if (other_age < min_age):
             print("**You're in the danger zone**\n*******************************")
 
 
 
     elif (other_age > your_age):
-        age_gap = other_age - your_age
+        min_age = (other_age/2)+7
 
-        if (age_gap <= 7):
+        if (your_age >= min_age):
             print("You're good to go!\n*******************************")
 
-        if (age_gap > 7):
+        if (your_age < min_age):
             print("**You're in the danger zone**\n*******************************")
 
     try_again = input("\n\nTry again?  (Press Enter else n to quit)\n")
