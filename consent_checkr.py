@@ -1,47 +1,32 @@
-# Consent Checker v0.8
+# half the age plus 7 to check age range
+# if user is over 18 minimum age of other person must be >= 18
+# Ver. 0.9
+
+print('**************************')
+print('Welcome to Consent Checkr!')
+print('**************************\n')
 
 
-while True:
-    print("Welcome to Consent Checkr v0.7!")
-    print("*******************************")
+print("Enter your age: ")
+user_age = input()
+user_age = int(user_age)
 
 
-    your_age = int(input("Enter  your age: "))
-    other_age = int(input("Enter other person's age: "))
+print("Enter other person's age: ")
+other_age = input()
+other_age = int(other_age)
 
-    if (your_age == 18 and other_age == 15):
-        print("\n********************")
-        print("\nNot this time Carson")
-        print("\n********************")
+lowest_age = (user_age // 2) + 7
 
+if user_age >= 18 and other_age < 18:
+    print("NONCE DETECTED")
 
-    elif (your_age < 18 or other_age < 18):
-        print("ACHTUNG\n**NONCE DETECTED**\nINFO PASSED ONTO RELEVENT AUTHORITIES\n*******************************")
+elif other_age >= 18 and user_age < 18:
+    print("NONCE DETECTED")
 
+elif other_age >= lowest_age:
+    print("You're good to go")
 
+elif other_age < lowest_age:
+    print("You're in dangerous territory....")
 
-    elif (your_age > other_age):
-        min_age = (your_age/2)+7
-
-        if (other_age >= min_age):
-            print("You're good to go!\n*******************************")
-
-        if (other_age < min_age):
-            print("**You're in the danger zone**\n*******************************")
-
-
-
-    elif (other_age > your_age):
-        min_age = (other_age/2)+7
-
-        if (your_age >= min_age):
-            print("You're good to go!\n*******************************")
-
-        if (your_age < min_age):
-            print("**You're in the danger zone**\n*******************************")
-
-    try_again = input("\n\nTry again?  (Press Enter else n to quit)\n")
-    if (try_again.lower() == 'n'):
-            break 
-
-input("\nPress Enter to exit")
